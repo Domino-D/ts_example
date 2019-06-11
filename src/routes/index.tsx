@@ -1,6 +1,8 @@
 import React from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
+import { Provider } from 'react-redux'
+import store from '../store'
 
 const asyncComponent = (importComponent: any) => {
   interface IState {
@@ -25,18 +27,20 @@ const asyncComponent = (importComponent: any) => {
   return AsyncComponent
 }
 
-const PageA = asyncComponent(() => import('./components/pagea'))
-const PageB = asyncComponent(() => import('./components/pageb'))
+const PageA = asyncComponent(() => import('../components/pagea'))
+const PageB = asyncComponent(() => import('../components/pageb'))
 
 const routes = (
-  <AppContainer>
-    <HashRouter>
-      <Switch>
-        <Route path='/' exact={true} component={PageA} />
-        <Route path='/b' component={PageB} />
-      </Switch>
-    </HashRouter>
-  </AppContainer>
+  <Provider store={store}>
+    <AppContainer>
+      <HashRouter>
+        <Switch>
+          <Route path='/' exact={true} component={PageA} />
+          <Route path='/b' component={PageB} />
+        </Switch>
+      </HashRouter>
+    </AppContainer>
+  </Provider>
 )
 
 export default routes

@@ -4,7 +4,7 @@ import './index.scss'
 import 'antd/dist/antd.css'
 import registerServiceWorker from './registerServiceWorker'
 
-import routes from './router'
+import routes from './routes'
 
 const render = (component: any) => {
   ReactDOM.render(
@@ -16,7 +16,7 @@ const render = (component: any) => {
 render(routes)
 
 if ((module as any).hot) {
-  (module as any).hot.accept('./router', () => {
+  (module as any).hot.accept('./routes', () => {
     render(routes)
   })
 }
