@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/react-redux": "^7.0.9",
     "@types/react-router-dom": "^4.3.3",
+    "@types/video.js": "^7.2.10",
     "antd": "^3.19.3",
     "autoprefixer": "7.1.6",
     "babel-jest": "20.0.3",
@@ -21,6 +22,8 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
+    "mobx": "^5.10.1",
+    "mobx-react": "^6.0.3",
     "node-sass": "^4.12.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -48,6 +51,7 @@
     "tslint-react": "^3.2.0",
     "uglifyjs-webpack-plugin": "1.2.5",
     "url-loader": "0.6.2",
+    "video.js": "^7.5.4",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.11.3",
     "webpack-manifest-plugin": "1.3.2",
@@ -71,7 +75,7 @@
       "!**/*.d.ts"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/src/config/polyfills.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.(j|t)s?(x)",
@@ -81,9 +85,9 @@
     "testURL": "http://localhost",
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^.+\\.tsx?$": "<rootDir>/src/config/jest/typescriptTransform.js",
+      "^.+\\.css$": "<rootDir>/src/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/src/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
